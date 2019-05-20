@@ -1,41 +1,36 @@
-# Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: GitHub Games
+# Metadata for your course
 
-# Short description (goes below the title; it will also be used in the RSS feed)
-description: This GitHub Games has lots of tests
+title: <script>alert(document.domain)</script># a name for your Learning Lab course
+tagline: test# a short description for your Learning Lab course, displayed on the course catalog
+description: test# a longer description for your Learning Lab course, displayed on the course's landing page
 
-# Your name, as you want it to appear underneath each post and in the footer
-author: GitHub Training, but forked
+# Repository setup
+# The following section template information for the repository
+# This will be used when the repository is crated for each individual learner
 
-# Your email if you want it to be linked on the contact page
-author_email: you@example.com
+template:
+  name: test# the name of the repository when it is created for the learner
+  repo: test# the name of the template repository from which to clone for the learner
 
-# The directory for category index pages. Change it to something else if
-# for example you want links like /categories/category1 instead of /category1
-category_dir: /
+# `before` block
+# Actions to take place after the learner registers, but before they start interacting with their repo
 
-# Uncomment if you are planning to run the blog in a subdirectory
-# Note - if you enable this, and attempt to view your site locally you have to use the baseurl in your local path.
-# Example, you must use http://localhost:4000/path/to/blog
-#baseurl: /path/to/blog
-# baseurl:
+before:
+- type: createLabel
+  name: another label
+  color: f87000
+  description: This label is used to label things
 
-# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-# url: http://yourdomain.com/
+# Steps for the course
+# A list of steps that take the learner through the course
+# Create one step for each action that a learner will complete
 
-#### Under the Hood Stuff #####
-
-# Use rdiscount as the markdown engine because it generates html5 compliant code for stuff like footnotes
-# If you use maroku (default engine) some of your generated pages may not validate or lint as html5
-# If you don't have it install it via gem install rdiscount
-markdown: kramdown
-
-# Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
-permalink: pretty
-
-# How many articles do you wish to appear on the front page:
-paginate: 3
-
-# Exclude metadata and development time dependencies (like Grunt plugins)
-#   exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
-gems: [jekyll-paginate]
+steps:
+- title: take a shit # the title of the step, shown to the learner in the course progress page
+  description: go to the bathroom and take a huuuuuge shit# the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: issue # a list of the actions that will occur when the step is triggered by an event
+  actions:
+  - type: createLabel
+    name: another label
+    color: f87000
+    description: This label is used to label things
